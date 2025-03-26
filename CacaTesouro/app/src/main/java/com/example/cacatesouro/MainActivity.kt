@@ -51,7 +51,10 @@ class MainActivity : ComponentActivity() {
                             {navController.navigate("Pergunta")})
                     }
                     composable("Tesouro") {
-                        tesouroComposable.Tesouro { navController.navigate("Home") }
+                        tesouroComposable.Tesouro(
+                            { navController.navigate("Home") },
+                            navController
+                        )
                     }
                 }
             }
@@ -98,7 +101,10 @@ fun HomePreview() {
                         {navController.navigate("Pergunta")})
             }
             composable("Tesouro") {
-                tesouroComposable.Tesouro { navController.navigate("Home") }
+                tesouroComposable.Tesouro(
+                    { navController.navigate("Home") },
+                    navController
+                )
             }
         }
     }
